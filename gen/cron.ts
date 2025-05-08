@@ -36,9 +36,14 @@ if(src === target) {
 console.log(`generating new lib.rs`);
 await $`npm run generate`;
 
-console.log("committing changes");
+console.log("committing changes to main");
 await $`git config --local user.name "github-actions"`;
 await $`git config --local user.email "github-actions@github.com"`;
 await $`git add .`;
 await $`git commit -m "v${pkg.version}"`;
 await $`git push origin HEAD`;
+
+const tag = `v${pkg.version}`.trim();
+console.log(`creating new tag ${tag}`);
+await $`git tag -f -a ${tag} -m ${tag}`;
+await $`git push -f origin ${tag}`;

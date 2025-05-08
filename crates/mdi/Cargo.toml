@@ -1,0 +1,18 @@
+[package]
+name = "material-design-icons"
+
+# do not edit this lines it will be replaced by the release script
+# TEMPLATE_VERSION_START
+version = "0.1.0"
+# TEMPLATE_VERSION_END
+
+# we set the edition to 2015 so it has the greatest compatibility with older rustc versions
+edition = "2015"
+
+authors = ["Ramiro Aisen <ramiroaisen@gmail.com>"]
+description = "Material Design Icons in the form of string constants"
+repository = "https://github.com/ramiroaisen/material-design-icons"
+license = "MIT OR Apache-2.0"
+keywords = ["material", "design", "icons", "icon", "mdi", "svg", "path"]
+
+[dependencies]

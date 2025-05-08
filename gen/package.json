@@ -1,7 +1,6 @@
 {
-  "name": "rust-material-icons-generator",
+  "name": "svelte-material-icons-generator",
   "version": "0.1.0",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "generate": "tsx generate.ts",
@@ -16,6 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.17",
-    "tsx": "^4.19.4"
+    "tsx": "^4.19.4",
+    "zx": "^8.5.3"
   }
 }

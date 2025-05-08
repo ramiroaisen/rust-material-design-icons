@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "crates/mdi",
+]
+
+resolver = "2"

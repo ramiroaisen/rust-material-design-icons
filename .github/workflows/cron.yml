@@ -1,0 +1,30 @@
+# Runs a daily script that checks if a new version of @mdi/js npm package is available
+# and if so, create a new version of this crate in crates.io with the same contents
+# mapped to rust and the same version number. (the actual release and publish is done in the publish and release workflows)
+name: Daily version check
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
+
+jobs:
+  check-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        working-directory: gen
+        run: npm ci
+
+      - name: Run version check script
+        working-directory: gen
+        run: |
+          npm run cron
