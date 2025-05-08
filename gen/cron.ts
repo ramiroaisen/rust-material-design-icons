@@ -42,6 +42,8 @@ fs.writeFileSync(`${__dirname}/../crates/mdi/Cargo.toml`, target, "utf-8");
 console.log(`generating new lib.rs`);
 await $`npm run generate`;
 
+cd("..")
+
 console.log("committing changes to main");
 await $`git config --local user.name "github-actions"`;
 await $`git config --local user.email "ramiroaisen@noreply.users.github.com"`;
