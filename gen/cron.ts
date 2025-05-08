@@ -3,6 +3,12 @@ const __dirname = new URL('.', import.meta.url).pathname.replace(/\/+$/, "");
 
 $.verbose = true;
 
+const token = process.env.GH_PAT;
+if(!token) {
+  console.error(`No token found, please set env.GH_PAT`);
+  process.exit(1);
+}
+
 cd(__dirname);
 
 const prev_pkg = JSON.parse(fs.readFileSync(`${__dirname}/node_modules/@mdi/js/package.json`, "utf-8"));
@@ -44,4 +50,16 @@ await $`git push origin HEAD`;
 const tag = `v${pkg.version}`.trim();
 console.log(`creating new tag ${tag}`);
 await $`git tag -f -a ${tag} -m ${tag}`;
-await $`git push -f origin ${tag}`;
+
+// do not expose token
+const log = $.log;
+$.log = (entry) => {
+  if(entry.kind === "cmd") {
+    return;
+  }
+
+  log.call($, entry);
+}
+
+console.log(`pushing new tag ${tag}`);
+await $`git push https://x-access-token:${token}@github.com/ramiroaisen/material-design-icons.git ${tag}`;

@@ -33,6 +33,6 @@ jobs:
       - name: Run version check script
         working-directory: gen
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           npm run cron
