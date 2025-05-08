@@ -1,0 +1,21 @@
+{
+  "name": "rust-material-icons-generator",
+  "version": "0.1.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generate": "tsx generate.ts",
+    "cron": "tsx cron.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@mdi/js": "7.4.47"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "tsx": "^4.19.4"
+  }
+}
