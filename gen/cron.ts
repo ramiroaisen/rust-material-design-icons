@@ -54,15 +54,14 @@ console.log(`creating new tag ${tag}`);
 await $`git tag -f -a ${tag} -m ${tag}`;
 
 // do not expose token
-const log = $.log;
-$.log = (entry) => {
-  if(entry.kind === "cmd") {
-    return;
-  }
+// const log = $.log;
+// $.log = (entry) => {
+//   if(entry.kind === "cmd") {
+//     return;
+//   }
 
-  log.call($, entry);
-}
+//   log.call($, entry);
+// }
 
 console.log(`pushing new tag ${tag}`);
-console.log(`git push https://x-access-token:***@github.com/ramiroaisen/rust-material-design-icons.git ${tag}`);
-await $`git push https://x-access-token:${token}@github.com/ramiroaisen/rust-material-design-icons.git ${tag}`;
+await $`git push origin ${tag}`;
