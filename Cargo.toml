@@ -1,6 +1,6 @@
 [workspace]
 members = [
-  "crates/mdi",
+  "crates/material-design-icons",
 ]
 
 resolver = "2"

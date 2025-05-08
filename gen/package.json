@@ -1,5 +1,5 @@
 {
-  "name": "svelte-material-icons-generator",
+  "name": "rust-material-design-icons-generator",
   "version": "0.1.0",
   "type": "module",
   "scripts": {

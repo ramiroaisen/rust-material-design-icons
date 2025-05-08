@@ -23,10 +23,11 @@ The constants refer to the <path d={}> attribute for SVG icons.
 
 
 ```rust
+/// Example for a Leptos/Sycamore DOM like framework, adjust it according to your needs.
 use material_design_icons as mdi;
 
 #[component]
-fn App() -> impl IntoView {
+fn App() -> View {
   view! {
     <svg viewBox="0 0 24 24">
       <path d=mdi::CHECK />
