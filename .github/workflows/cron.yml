@@ -8,8 +8,12 @@ on:
     - cron: "0 0 * * *" # Runs daily at midnight UTC
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: write # Allows pushing changes and creating tags
+
 jobs:
-  check-and-publish:
+  check:
     runs-on: ubuntu-latest
 
     steps:

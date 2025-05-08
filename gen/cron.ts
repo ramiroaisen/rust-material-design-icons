@@ -5,8 +5,6 @@ $.verbose = true;
 
 cd(__dirname);
 
-await $`npm ci`;
-
 const prev_pkg = JSON.parse(fs.readFileSync(`${__dirname}/node_modules/@mdi/js/package.json`, "utf-8"));
 
 await $`npm i @mdi/js@latest --save-exact`;
