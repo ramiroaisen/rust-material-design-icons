@@ -3,11 +3,11 @@ const __dirname = new URL('.', import.meta.url).pathname.replace(/\/+$/, "");
 
 $.verbose = true;
 
-// const token = process.env.GH_PAT;
-// if(!token) {
-//   console.error(`No token found, please set env.GH_PAT`);
-//   process.exit(1);
-// }
+const token = process.env.GH_PAT;
+if(!token) {
+  console.error(`No token found, please set env.GH_PAT`);
+  process.exit(1);
+}
 
 cd(__dirname);
 
@@ -65,8 +65,8 @@ $.log = (entry) => {
   log.call($, entry);
 }
 
-// console.log(`pushing new tag ${tag}`);
-// console.log(`git push TOKEN@github.com/ramiroaisen/rust-material-design-icons.git ${tag}`);
-// const origin = `https://x-access-token:${token}@github.com/ramiroaisen/rust-material-design-icons.git`
-// await $`git push ${origin} ${tag}`;
-await $`git push origin ${tag}`;
+console.log(`pushing new tag ${tag}`);
+console.log(`git push TOKEN@github.com/ramiroaisen/rust-material-design-icons.git ${tag}`);
+const origin = `https://x-access-token:${token}@github.com/ramiroaisen/rust-material-design-icons.git`
+await $`git push ${origin} ${tag}`;
+// await $`git push origin ${tag}`;

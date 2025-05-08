@@ -6,6 +6,11 @@ on:
       - "*"
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: write # Allows pushing changes and creating tags
+  repository-projects: write # Allows triggering other workflows by tag
+
 jobs:
   release:
     runs-on: ubuntu-latest
