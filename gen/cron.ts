@@ -47,7 +47,7 @@ await $`git config --local user.name "github-actions"`;
 await $`git config --local user.email "ramiroaisen@noreply.users.github.com"`;
 await $`git add .`;
 await $`git commit -m "v${pkg.version}"`;
-await $`git push origin HEAD`;
+// await $`git push origin HEAD`;
 
 const tag = `v${pkg.version}`.trim();
 console.log(`creating new tag ${tag}`);
