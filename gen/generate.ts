@@ -4,7 +4,7 @@ import path from "path";
 import pkg from "@mdi/js/package.json" with { type: "json" };
 
 const __dirname = new URL('.', import.meta.url).pathname;
-const librs = path.resolve(`${__dirname}/../crates/mdi/src/lib.rs`);
+const librs = path.resolve(`${__dirname}/../crates/material-design-icons/src/lib.rs`);
 
 const ignore = [
   "__esModule",

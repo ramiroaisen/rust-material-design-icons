@@ -25,7 +25,7 @@ if(prev_pkg.version === pkg.version) {
 console.log(`version change detected from ${prev_pkg.version} to ${pkg.version}`);
 
 console.log(`updating Cargo.toml`);
-const src = fs.readFileSync(`${__dirname}/../crates/mdi/Cargo.toml`, "utf-8");
+const src = fs.readFileSync(`${__dirname}/../crates/material-design-icons/Cargo.toml`, "utf-8");
 const target = src.replace(
   /\# TEMPLATE_VERSION_START\n(.+)\n\# TEMPLATE_VERSION_END/,
   `# TEMPLATE_VERSION_START\nversion = "${pkg.version}"\n# TEMPLATE_VERSION_END`
@@ -37,7 +37,7 @@ if(src === target) {
   throw new Error(`Error changing version in Cargo.toml`);
 };
 
-fs.writeFileSync(`${__dirname}/../crates/mdi/Cargo.toml`, target, "utf-8");
+fs.writeFileSync(`${__dirname}/../crates/material-design-icons/Cargo.toml`, target, "utf-8");
 
 console.log(`generating new lib.rs`);
 await $`npm run generate`;
