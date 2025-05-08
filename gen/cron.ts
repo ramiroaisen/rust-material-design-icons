@@ -3,11 +3,11 @@ const __dirname = new URL('.', import.meta.url).pathname.replace(/\/+$/, "");
 
 $.verbose = true;
 
-const token = process.env.GH_PAT;
-if(!token) {
-  console.error(`No token found, please set env.GH_PAT`);
-  process.exit(1);
-}
+// const token = process.env.GH_PAT;
+// if(!token) {
+//   console.error(`No token found, please set env.GH_PAT`);
+//   process.exit(1);
+// }
 
 cd(__dirname);
 
