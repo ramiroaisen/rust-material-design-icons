@@ -6,6 +6,7 @@ name: Daily version check
 on:
   schedule:
     - cron: "0 0 * * *" # Runs daily at midnight UTC
+  workflow_dispatch:
 
 jobs:
   check-and-publish:
