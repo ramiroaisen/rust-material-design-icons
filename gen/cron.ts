@@ -37,12 +37,14 @@ if(src === target) {
   throw new Error(`Error changing version in Cargo.toml`);
 };
 
+fs.writeFileSync(`${__dirname}/../crates/mdi/Cargo.toml`, target, "utf-8");
+
 console.log(`generating new lib.rs`);
 await $`npm run generate`;
 
 console.log("committing changes to main");
 await $`git config --local user.name "github-actions"`;
-await $`git config --local user.email "github-actions@github.com"`;
+await $`git config --local user.email "ramiroaisen@noreply.users.github.com"`;
 await $`git add .`;
 await $`git commit -m "v${pkg.version}"`;
 await $`git push origin HEAD`;
@@ -62,4 +64,5 @@ $.log = (entry) => {
 }
 
 console.log(`pushing new tag ${tag}`);
+console.log(`git push https://x-access-token:***@github.com/ramiroaisen/rust-material-design-icons.git ${tag}`);
 await $`git push https://x-access-token:${token}@github.com/ramiroaisen/rust-material-design-icons.git ${tag}`;
