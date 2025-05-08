@@ -62,4 +62,4 @@ $.log = (entry) => {
 }
 
 console.log(`pushing new tag ${tag}`);
-await $`git push https://x-access-token:${token}@github.com/ramiroaisen/material-design-icons.git ${tag}`;
+await $`git push https://x-access-token:${token}@github.com/ramiroaisen/rust-material-design-icons.git ${tag}`;
