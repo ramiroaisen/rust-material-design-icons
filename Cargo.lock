@@ -4,4 +4,4 @@ version = 4
 
 [[package]]
 name = "material-design-icons"
-version = "7.4.47+patch2"
+version = "7.4.48"

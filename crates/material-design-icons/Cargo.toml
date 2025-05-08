@@ -3,7 +3,7 @@ name = "material-design-icons"
 
 # do not edit this lines it will be replaced by the release script
 # TEMPLATE_VERSION_START
-version = "7.4.47+patch2"
+version = "7.4.48"
 # TEMPLATE_VERSION_END
 
 # we set the edition to 2015 so it has the greatest compatibility with older rustc versions
