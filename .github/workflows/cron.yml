@@ -11,6 +11,7 @@ on:
 permissions:
   id-token: write
   contents: write # Allows pushing changes and creating tags
+  repository-projects: write # Allows triggering other workflows by tag
 
 jobs:
   check:
@@ -31,5 +32,7 @@ jobs:
 
       - name: Run version check script
         working-directory: gen
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_PAT }}
         run: |
           npm run cron
