@@ -2,10 +2,11 @@
 
 This crate provides Material Design Icons as string constants, making it easy to integrate these icons into your Rust projects.
 
-The crate is automatically published to [crates.io](https://crates.io) using a GitHub Action 
-every time theres a new version of [@mdi/js](https://npmjs.com/package/@mdi/js) npm package ensuring that you have access to the latest icons from.
+The crate is automatically published to [crates.io](https://crates.io) using a GitHub Action
+every time there's a new version of [@mdi/js](https://npmjs.com/package/@mdi/js) npm package.
+Ensuring that you have access to the latest icons from mdi.
 
-Version of this crate are automatically synced with the versions of @mdi/js npm package.
+Versions of this crate are automatically synced with the versions of @mdi/js npm package.
 
 ## Features
 - Access Material Design Icons as string constants.
